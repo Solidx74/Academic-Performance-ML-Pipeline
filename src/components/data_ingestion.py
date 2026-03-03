@@ -9,6 +9,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformationConfig
+from src.components.data_transformation import DataTransformation
+
 # The @dataclass decorator is used to create a class that is used to store the configuration for the data ingestion. It has three attributes: train_data_path, test_data_path and raw_data_path. The default value for these attributes is the path where the train, test and raw data will be saved in the artifacts folder.
 @dataclass
 # The DataIngestionConfig class is used to store the configuration for the data ingestion. It has three attributes: train_data_path, test_data_path and raw_data_path. The default value for these attributes is the path where the train, test and raw data will be saved in the artifacts folder.
@@ -59,4 +62,7 @@ class DataIngestion:
 
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data, test_data = obj.initiate_data_ingestion()
+    
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data, test_data)
