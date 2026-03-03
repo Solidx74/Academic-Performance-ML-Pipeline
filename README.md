@@ -64,7 +64,9 @@ This approach ensures **reproducibility**, **scalability**, and **efficient perf
 
 
 # Clone the repository
-git clone https://github.com/<your-username>/student-performance-ml-pipeline.git
+git clone [https://github.com/<your-username>/student-performance-ml-pipeline.git](https://github.com/Solidx74/Academic-Performance-ML-Pipeline.git)
+
+
 cd student-performance-ml-pipeline
 
 # Create virtual environment
