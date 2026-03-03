@@ -88,21 +88,32 @@ pip install -r requirements.txt
 ## Usage 
 
 from src.components.data_ingestion import DataIngestion
+
 from src.components.data_transformation import DataTransformation
+
 from src.components.model_trainer import ModelTrainer
 
 # Step 1: Data Ingestion
+
 ingestion = DataIngestion()
+
 train_path, test_path = ingestion.initiate_data_ingestion()
 
 # Step 2: Data Transformation
+
 transformation = DataTransformation()
+
 train_array, test_array, preprocessor = transformation.initiate_data_transformation(train_path, test_path)
 
 # Step 3: Model Training & Evaluation
+
 trainer = ModelTrainer()
+
 r2_score_value = trainer.initiate_model_trainer(train_array, test_array)
+
 print(f"Best model R² score: {r2_score_value}")
+
+
 
 ## License
 
